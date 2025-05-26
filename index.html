@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Creator</title>
+    <link rel="icon" href="assets/strategy.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <p id="titlestrony"><img draggable="false" src="./assets/strategy.png" alt="logo" id="logo">Roadmap Creator</p>
+        <input class="btnheader inpucix" placeholder="ADD TASK" autocomplete="off"></input>
+        <div class="send">ADD</div>
+        <div class="btnheader" id="conn" style="background-color: #10B981;">CONNECT TASKS</div>
+        <div class="btnheader" id="rem">REMOVE TASKS</div>
+    </header>
+    <div id="middlecontainer">
+        <main id="main">
+            <!-- MISC -->
+            <div id="inputowanieczegos">
+                <p>CHANGE ROADMAP NAME</p>
+                <br>
+                <div id="dolnaczescinputowania">
+                    <input type="text" class="btnheader inpucix" id="inputowniaPL" placeholder="Enter name here" autocomplete="off">
+                    <div class="trashcan" id="iks"><img draggable="false" class="smietnikObrazek" src="./assets/close.png" alt="remove"></div>
+                    <div class="send" id="wysylanieZmian" style="width: 75px; border-radius: 5px;">CHANGE</div>
+                </div>
+            </div>
+            <div id="yesorno">
+                <p>Are you sure you want to delete this roadmap?</p>
+                <br>
+                <div id="tutajtakinie">
+                    <div class="trashcan" id="yes" >yes</div>
+                    <div class="trashcan" id="taknaprawdenie" style="background-color: #EF4444;">no</div>
+                </div>
+                <div class="trashcan" id="iks"><img draggable="false" class="smietnikObrazek" id="closeYesOrNo" src="./assets/close.png" alt="remove"></div>
+            </div>
+            <div id="notification">
+                <p>Select task to remove..</p>
+            </div>
+            <!-- ZWYKLE -->
+            <aside id="info">
+                <p>0 / 0 completed</p>
+                <div id="przedprogres">
+                    <div id="progressbar"></div>
+                </div>
+                <p>Left mouse button = <b>MOVE</b></p>
+                <p>Right mouse button = <b>COMPLETE</b></p>
+            </aside>
+            <h1 id="title">EXAMPLE</h1>
+            <div id="wielkoscContainer">
+                <div class="wielkosc" id="plus">+</div>
+                <div class="wielkosc" id="minus">-</div>
+            </div>
+        </main>
+        <div id="kontenerbok">
+            <aside id="lista">
+                <p id="titlelista">Your roadmaps</p>
+                <hr class="linia">
+                <ul id="listazelementami">
+
+                </ul>
+                <hr class="linia">
+                <div id="newbtn">NEW</div>
+            </aside>
+            <div id="bottomlisty">
+                <div id="credits"><a id="creditsA" href="#">Credits</a></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
