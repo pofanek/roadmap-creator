@@ -249,7 +249,17 @@ closeBtnInp.addEventListener('click', () => {
     inputWyskakujacyCONTAINER.style.opacity = "0"
     inputWyskakujacyCONTAINER.style.pointerEvents = "none"
 })
-
+const closeBtnCredits = document.getElementById("iksCred");
+const creditBox = document.getElementById("creditsBox");
+closeBtnCredits.addEventListener('click', () => {
+    creditBox.style.opacity = "0"
+    creditBox.style.pointerEvents = "none"
+})
+const creditsOpen = document.getElementById("credits")
+creditsOpen.addEventListener('click', () => {
+        creditBox.style.opacity = "1"
+        creditBox.style.pointerEvents = "all"
+})
 // * TRASHCANY
 closeBtn.addEventListener('click', () => {
     yesorno.style.opacity = "0"
@@ -289,19 +299,6 @@ noBtn.addEventListener('click', () => {
     yesorno.style.opacity = "0"
     yesorno.style.pointerEvents = "none"
 })
-const plus = document.getElementById("plus")
-const minus = document.getElementById("minus")
-const main = document.getElementById('main');
-const origHeight = main.offsetHeight;
-plus.addEventListener('click', () => {
-    main.style.height = main.offsetHeight + origHeight + 'px';
-});
-minus.addEventListener('click', () => {
-    const newHeight = main.offsetHeight - origHeight;
-    if (newHeight >= origHeight) {
-    main.style.height = newHeight + 'px';
-    }
-});
 // ! DZIEN DOBRY
 // Roadmap Creator - Drag and Connect functionality
 class RoadmapCreator {
@@ -811,7 +808,6 @@ class RoadmapCreator {
             counter: this.taskCounter
         }
         localStorage.setItem("roadmaps", JSON.stringify(this.roadmaps))
-        console.log("Zapisano do LS:", JSON.stringify(this.roadmaps))
     }
 
     loadAllRoadmapsFromStorage() {

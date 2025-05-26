@@ -455,6 +455,7 @@ main {
 
 #credits {
     background-color: var(--szary);
+    user-select: none;
     flex: 1;
     height: 40px;
     display: flex;
@@ -469,18 +470,39 @@ main {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     background-color: #d6d6d6;
+    cursor:pointer;
 }
-
-#creditsA {
-    color: black;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
+#creditsBox {
+    background-color: var(--bg1);
+    height: 79%;
+    width: 250px;
+    padding: 10px;
+    border-radius: 8px;
     display: flex;
-    align-items: center;
+    flex-direction:column;
     justify-content: center;
-    user-select: none;
-    -webkit-user-drag: none;
+    align-items: center;
+    z-index: 2;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3 ease;
+    transition: opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+#creditsBox p {
+    font-size:1.6rem;
+}
+#iksCred {
+    position: absolute;
+    top: -2.5%;
+    left: 93%;
+}
+#creditsBox > p {
+    font-size: 1.2rem;
+    padding: 3px;
 }
 /*! WYSKAKUJACE GOWNA */
 /** input wyskakuje  */
@@ -594,6 +616,7 @@ main {
     font-weight: bolder;
     color: var(--czerwony);
 }
+
 /* *BLOCZEK */
 .bloczek {
     position: absolute;

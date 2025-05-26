@@ -16,7 +16,7 @@
         <div class="btnheader" id="rem">REMOVE TASKS</div>
     </header>
     <div id="middlecontainer">
-        <main id="main">
+        <main oncontextmenu="return false">
             <!-- MISC -->
             <div id="inputowanieczegos">
                 <p>CHANGE ROADMAP NAME</p>
@@ -39,6 +39,23 @@
             <div id="notification">
                 <p>Select task to remove..</p>
             </div>
+            <div id="creditsBox">
+                <div class="trashcan" id="iksCred"><img draggable="false" class="smietnikObrazek" src="./assets/close.png" alt="remove"></div>
+                
+                <p>Design</p>
+                <p>tekst</p>
+                <p>Frontend Development</p>
+                <p>tekst</p>
+                <p>Backend Development</p>
+                <p>tekst</p>
+                <p>Graphic Design</p>
+                <p>tekst</p>
+                <p>Project Management</p>
+                <p>tekst</p>
+                <p>Product Owner</p>
+                <p>tekst</p>
+                <p style="color: gold">pozdrawiam pana razika</p>
+            </div>
             <!-- ZWYKLE -->
             <aside id="info">
                 <p>0 / 0 completed</p>
@@ -49,10 +66,6 @@
                 <p>Right mouse button = <b>COMPLETE</b></p>
             </aside>
             <h1 id="title">EXAMPLE</h1>
-            <div id="wielkoscContainer">
-                <div class="wielkosc" id="plus">+</div>
-                <div class="wielkosc" id="minus">-</div>
-            </div>
         </main>
         <div id="kontenerbok">
             <aside id="lista">
@@ -65,7 +78,7 @@
                 <div id="newbtn">NEW</div>
             </aside>
             <div id="bottomlisty">
-                <div id="credits"><a id="creditsA" href="#">Credits</a></div>
+                <div id="credits">Credits</div>
             </div>
         </div>
     </div>
