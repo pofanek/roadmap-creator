@@ -151,6 +151,9 @@ ladujListenery()
 var nazwaPierwszego = aktualnyLi.querySelector("span").textContent
 titleMaina.textContent = nazwaPierwszego.toUpperCase()
 currentRoadmapName = nazwaPierwszego
+if (window.roadmapCreator) {
+    window.roadmapCreator.switchRoadmap(currentRoadmapName);
+}
 // * DODAJ ELEMENT I CHANGE
 addBtn.addEventListener('click', () => {
     inputWyskakujacyCONTAINER.style.opacity = "1"
@@ -174,10 +177,13 @@ changeBtn.addEventListener('click', () => {
             sendNotification("title changed successfully.", "green")
             titleMaina.textContent = tresc.toUpperCase()
             
-            // Zaktualizuj nazwę w roadmap creator
-            if (window.roadmapCreator && currentRoadmapName === oldName) {
-                window.roadmapCreator.renameRoadmap(oldName, tresc)
-                currentRoadmapName = tresc
+            if (window.roadmapCreator) {
+                // Zawsze przenieś dane pod nową nazwę w localStorage (tasks -> roadmapy)
+                window.roadmapCreator.renameRoadmap(oldName, tresc);
+                // Jeśli właśnie zmieniana była aktywna roadmapa, zaktualizuj currentRoadmapName
+                if (currentRoadmapName === oldName) {
+                    currentRoadmapName = tresc;
+                }
             }
             
             saveListToStorage()
@@ -212,9 +218,13 @@ inputownia.addEventListener("keypress", (event) => {
                 sendNotification("title changed successfully.", "green")
                 titleMaina.textContent = tresc.toUpperCase()
                 
-                if (window.roadmapCreator && currentRoadmapName === oldName) {
-                    window.roadmapCreator.renameRoadmap(oldName, tresc)
-                    currentRoadmapName = tresc
+                if (window.roadmapCreator) {
+                    // Zawsze przenieś dane pod nową nazwę w localStorage (tasks -> roadmapy)
+                    window.roadmapCreator.renameRoadmap(oldName, tresc);
+                    // Jeśli właśnie zmieniana była aktywna roadmapa, zaktualizuj currentRoadmapName
+                    if (currentRoadmapName === oldName) {
+                        currentRoadmapName = tresc;
+                    }
                 }
                 
                 saveListToStorage()
@@ -874,6 +884,5 @@ class RoadmapCreator {
 }
 document.addEventListener('DOMContentLoaded', () => {
     window.roadmapCreator = new RoadmapCreator();
-    const nazwa = document.querySelector("#title").textContent.trim().toLowerCase()
-    window.roadmapCreator.switchRoadmap(nazwa.charAt(0).toUpperCase() + nazwa.slice(1))
+    window.roadmapCreator.switchRoadmap(currentRoadmapName);
 });
